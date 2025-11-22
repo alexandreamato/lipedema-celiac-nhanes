@@ -29,7 +29,7 @@ You need Python 3.8+ installed.
 
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
+    git clone [[https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/alexandreamato/lipedema-celiac-nhanes.git)
     cd SEU-REPOSITORIO
     ```
 
