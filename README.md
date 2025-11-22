@@ -29,8 +29,8 @@ You need Python 3.8+ installed.
 
 1.  Clone this repository:
     ```bash
-    git clone [[https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/alexandreamato/lipedema-celiac-nhanes.git)
-    cd SEU-REPOSITORIO
+    git clone [[[https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/alexandreamato/lipedema-celiac-nhanes.git)](https://github.com/alexandreamato/lipedema-celiac-nhanes.git)
+    cd lipedema-celiac-nhanes
     ```
 
 2.  Install required packages:
