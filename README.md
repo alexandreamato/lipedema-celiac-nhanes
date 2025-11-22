@@ -1,15 +1,14 @@
-# Gynoid Fat Distribution and Celiac Disease
+# Gynoid Fat Distribution and Celiac Disease: NHANES Analysis
 
-Exploratory analysis investigating the relationship between gynoid fat distribution (lipedema-compatible phenotype) and celiac disease prevalence using NHANES 2011-2014 data.
+This repository contains the analytic code and supplementary materials for the research article:
 
-## Citation
-
-If you use this code, please cite our manuscript:
-> [Citation will be added upon publication]
+**"Gynoid Fat Distribution and Celiac Disease: An Exploratory Analysis of NHANES 2011-2014"**
 
 ## Overview
 
-This repository contains the analysis code for our study examining whether women with higher gynoid (lower-body) fat distribution have different celiac disease prevalence. We use validated body composition measures from dual-energy X-ray absorptiometry (DXA) as proxies for lipedema phenotype.
+This study investigates the relationship between gynoid fat distribution (lipedema-compatible phenotype) and celiac disease prevalence using data from the National Health and Nutrition Examination Survey (NHANES) 2011-2014.
+
+The analysis employs complex survey design weighting to provide nationally representative estimates for the US adult female population.
 
 **Key findings:**
 - Women with celiac disease had significantly lower gynoid region percent fat (39.5% vs 42.6%, p=0.0007)
@@ -30,19 +29,36 @@ This analysis uses publicly available data from the [National Health and Nutriti
 - Diabetes (DIQ)
 - Thyroid Profile (THYROD)
 
-## Requirements
+## How to Run the Analysis
 
-```bash
-pip install pandas numpy requests statsmodels scipy matplotlib seaborn
-```
+The script is designed to automatically download the required raw `.xpt` (SAS transport) files directly from the CDC/NHANES website, ensuring reproducibility without hosting restricted data.
 
-## Usage
+### Prerequisites
 
-Run the main analysis:
+Python 3.8+ installed.
 
-```bash
-python nhanes_weighted_final_analysis.py
-```
+### Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/alexandreamato/lipedema-celiac-nhanes.git
+   cd lipedema-celiac-nhanes
+   ```
+
+2. Install required packages:
+   ```bash
+   pip install pandas numpy requests statsmodels scipy matplotlib seaborn
+   ```
+
+3. Run the main analysis:
+   ```bash
+   python nhanes_weighted_final_analysis.py
+   ```
+
+4. For HLA proxy sensitivity analysis:
+   ```bash
+   python nhanes_hla_proxy_analysis.py
+   ```
 
 This will:
 1. Download NHANES data files from CDC (cached locally in `nhanes_cache/`)
@@ -50,12 +66,6 @@ This will:
 3. Calculate lipedema phenotype proxies
 4. Perform survey-weighted statistical analyses
 5. Generate figures and tables
-
-For HLA proxy sensitivity analysis:
-
-```bash
-python nhanes_hla_proxy_analysis.py
-```
 
 ## Repository Structure
 
@@ -70,8 +80,6 @@ python nhanes_hla_proxy_analysis.py
 │   ├── Figure4_Immunometabolic.png
 │   ├── FigureS1_Quartiles.png
 │   └── FigureS2_Leanness_Bias.png
-├── tables/                             # Generated tables (CSV)
-├── manuscript_final.md                 # Methods and results
 └── README.md
 ```
 
@@ -88,15 +96,24 @@ Strict dual-positive criterion:
 3. **Lipedema phenotype** - leg-to-trunk ratio > 90th percentile
 
 ### Statistical Approach
-- All analyses incorporate NHANES complex survey design weights
+- All analyses incorporate NHANES complex survey design weights (WTMEC2YR adjusted for combined cycles)
 - Survey-weighted t-tests for continuous variables
 - Fisher's exact test for categorical variables (small cell counts)
 - Sensitivity analyses stratified by BMI category
 
-## License
+## Citation
 
-This code is released under the MIT License. NHANES data is in the public domain.
+If you use this code or data structure in your research, please cite the original paper:
+
+> [Citation will be added upon publication]
 
 ## Contact
 
-For questions about this analysis, please open an issue on this repository.
+For questions regarding the code or methodology:
+
+- **Author:** Alexandre Campos Moraes Amato
+- **Institution:** Amato - Instituto de Medicina Avancada
+
+---
+
+*Disclaimer: This repository is for research reproducibility purposes. The raw data is property of the CDC/NCHS.*
